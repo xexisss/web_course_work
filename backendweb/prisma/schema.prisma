@@ -141,7 +141,7 @@ model TranslatorProfile {
   bio             String?
   yearsExperience Int      @default(0)
   ratePer1000     Decimal  @db.Decimal(10, 2)
-  currency        String   @default("RUB")
+  currency        String   @default("BYN")
   isVerified      Boolean  @default(false)
   isAvailable     Boolean  @default(true)
   createdAt       DateTime @default(now())
@@ -201,7 +201,7 @@ model Order {
   wordCount            Int?
   estimatedPrice       Decimal?     @db.Decimal(12, 2)
   agreedPrice          Decimal?     @db.Decimal(12, 2)
-  currency             String       @default("RUB")
+  currency             String       @default("BYN")
   deadlineAt           DateTime?
   submittedAt          DateTime?
   acceptedAt           DateTime?
