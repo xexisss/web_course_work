@@ -1,11 +1,18 @@
+// SPDX-FileCopyrightText: 2026 Длусский Артём <adlusski@gmail.com>
+// SPDX-License-Identifier: LicenseRef-LinguaTrade-Freeware-1.0
+//
+// LinguaTrade – платформа заказа переводов. Бесплатная программа (freeware).
+// Изменение и распространение изменённых версий запрещены, см. файл LICENSE.
+
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import PDFDocument from "pdfkit";
 import type { Response } from "express";
 
 const backendRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const FONT_REGULAR = path.join(backendRoot, "assets/fonts/ReportSans.ttf");
-const FONT_BOLD = path.join(backendRoot, "assets/fonts/ReportSans-Bold.ttf");
+// PT Sans (ParaType), SIL Open Font License 1.1 – см. assets/fonts/OFL.txt
+const FONT_REGULAR = path.join(backendRoot, "assets/fonts/PTSans-Regular.ttf");
+const FONT_BOLD = path.join(backendRoot, "assets/fonts/PTSans-Bold.ttf");
 
 export function createPdfDocument(res: Response) {
   const doc = new PDFDocument({ margin: 40 });

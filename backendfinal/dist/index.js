@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2026 Длусский Артём <adlusski@gmail.com>
+// SPDX-License-Identifier: LicenseRef-LinguaTrade-Freeware-1.0
+//
+// LinguaTrade – платформа заказа переводов. Бесплатная программа (freeware).
+// Изменение и распространение изменённых версий запрещены, см. файл LICENSE.
 import express from "express";
 import cors from "cors";
 import path from "node:path";
@@ -15,6 +20,16 @@ app.use(express.json({ limit: "2mb" }));
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 app.get("/api/health", (_req, res) => {
     res.json({ ok: true, service: "translator-platform-api" });
+});
+// Сведения о программе и условиях её использования
+app.get("/api/about", (_req, res) => {
+    res.json({
+        name: "LinguaTrade",
+        author: "Длусский Артём",
+        license: "LicenseRef-LinguaTrade-Freeware-1.0",
+        licenseType: "freeware",
+        licenseUrl: "https://github.com/xexisss/web_course_work/blob/main/LICENSE",
+    });
 });
 app.use("/api/auth", authRouter);
 app.use("/api/catalog", catalogRouter);

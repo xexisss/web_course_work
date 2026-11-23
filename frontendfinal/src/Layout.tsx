@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2026 Длусский Артём <adlusski@gmail.com>
+// SPDX-License-Identifier: LicenseRef-LinguaTrade-Freeware-1.0
+//
+// LinguaTrade – платформа заказа переводов. Бесплатная программа (freeware).
+// Изменение и распространение изменённых версий запрещены, см. файл LICENSE.
+
 import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { useEffect, useState } from "react";
@@ -223,7 +229,12 @@ export function Layout() {
           </div>
 
           <div className="footer-bottom">
-            <p className="footer-copy">© {new Date().getFullYear()} LinguaTrade</p>
+            <p className="footer-copy">
+              © {new Date().getFullYear()} LinguaTrade · Бесплатная программа (freeware), автор – А. Длусский ·{" "}
+              <a href="https://github.com/xexisss/web_course_work/blob/main/LICENSE" target="_blank" rel="noreferrer">
+                Условия использования
+              </a>
+            </p>
           </div>
         </div>
       </footer>
